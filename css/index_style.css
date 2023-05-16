@@ -1,0 +1,23 @@
+/*h3 h3*/
+h2,h3{font-family: "Lucida Handwriting";
+    text-align: center;
+    color: #2B3A67;
+    font-size: 40px;
+    padding: 2%;
+}
+
+/*section*/
+section>div,article{
+    padding: 10px;
+    background-color: #C3C3E680;
+}
+article{
+    text-align: justify;
+    font-size: 20px;
+    font-family: georgia;
+}
+
+/*image*/
+img{
+width:100%;
+}

@@ -1,0 +1,41 @@
+/*h2*/
+h2{
+    font-family: "Lucida Handwriting";
+    text-align: center;
+    color: #2B3A67;
+    padding: 2%;
+    font-size: 40px;
+}
+
+/*gallery*/
+.gallery{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 5px;
+    background-color: #C3C3E680;
+}
+
+div>div{
+    padding:  5px;
+}
+
+div>div>a img{
+    margin-top: 5px;
+}
+
+/*image*/
+div>div img:hover{    
+    transform: rotate(1.2deg);
+}
+
+img{
+    width: 100%;
+}
+
+/*text*/
+p{
+    text-align: center;
+    font-family: "Lucida Handwriting";
+    color: #2B3A67;
+    font-size: 20px;
+}

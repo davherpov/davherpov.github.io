@@ -1,0 +1,27 @@
+/*h2,h4*/
+h2,h4{font-family: "Lucida Handwriting";
+    text-align: center;
+    color: #2B3A67;
+    padding: 2%;
+}
+h2{font-size: 40px;}
+h4{font-size: 20px;}
+
+/*section*/
+section>div{
+    padding: 10px;
+    background-color: #C3C3E680;
+}
+
+table{
+    font-family: "Lucida Handwriting";
+    font-size: 20px;
+    margin: auto;
+}
+
+table, tr{
+    color:#2B3A67; 
+}
+
+table, th, td {
+  border: 1px solid #E05263;

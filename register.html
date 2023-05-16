@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/w3_style.css">
+<link rel="stylesheet" href="css/common_style.css">
+<link rel="stylesheet" href="css/register_style.css">
+<title>Cooking with David</title>
+</head>
+<body>
+    
+    <!--header-->
+<header>
+    <h1 id="home">Cooking with David</h1>
+</header>
+   
+    <!--nav movil-->
+<nav>
+<ul class="menu_movil menu_drop">
+    <li><a href="#menu" class="size_icon"> <i class="fa fa-bars"></i> </a>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="easy_recipes.html">Easy Recipes</a></li>
+            <li><a href="food_table.html">Seasonal foods</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="#register">Register</a>
+                <ul class="menu_drop menu_2">
+                    <li> <a href="register.html">Register</a> </li>
+                    <li> <a href="#">Contac</a> </li>
+                </ul>
+            </li>    
+        </ul>
+    </li>
+</ul>
+    
+    <!--nav pc-->
+<ul class="menu_pc menu_drop menu_box">
+    <li class="col-3 col-s-3"><a href="index.html">Home</a></li>
+    <li class="col-3 col-s-3"><a href="recipes.html">Recipes</a></li>
+    <li class="col-3 col-s-3"><a href="food_table.html">Seasonal foods</a></li>
+    <li class="col-3 col-s-3"><a href="gallery.html">Gallery</a></li>
+    <li class="col-3 col-s-3"><a href="#register">Register</a>  
+        <ul>
+            <li> <a href="register.html">Register</a> </li>
+            <li> <a href="#">Contact</a> </li>
+        </ul>
+    </li>
+</ul>
+</nav>
+    <!--section-->
+<main>
+            <!--Register-->
+        <h2>Register to receive our recipes</h2>
+    
+    <section>
+        <p>Name:</p> <input id="name">
+    <br>
+        <p>Surname:</p> <input id="surname">
+    <br>
+        <p>Email:</p> <input id="email">
+    <br>
+    <br>
+    <br>
+        <button onclick="reg()">Submit</button>
+        <p id="register"></p>
+            <script>
+                function reg() {
+                    var name= document.getElementById("name").value;
+                    var surname= document.getElementById("surname").value;
+                    var email= document.getElementById("email").value;
+                if (name.length == 0) {
+                        window.alert ('You have to enter a name!');
+                }
+                if (surname.length == 0 ) {
+                    window.alert ('You have to enter a surname!');
+                }
+                if (email.length == 0 ){
+                        window.alert ('You have to enter a email!');
+                }
+                else {
+                    document.getElementById("register").innerHTML= "Thanks for registering "+name+", you will shortly receive in your mailbox "+email+" our recipes";
+                        }
+}
+            </script>
+    </section>
+    
+    <br>
+            <!--Questionnaire-->
+        <h2>Help us to improve</h2>
+    
+    <section>
+        <p>1.Which section do you like best?</p>
+            <select id="q1">
+                <option name="section" value="empty"></option>
+                <option name="section" value="Today's menu">Today's menu</option>
+                <option name="section" value="Recipes">Recipes</option>
+                <option name="section" value="Gallery">Gallery</option>
+            </select>
+
+        <p>2.What do you prefer the recipes of?</p>
+            <select id="q2">
+                <option name="recipes" value="empty"></option>
+                <option name="recipes" value="Meat">Meat</option>
+                <option name="recipes" value="Fish">Fish</option>
+                <option name="recipes" value="Vegetables">Vegetables</option>
+                <option name="recipes" value="Legumes">Legumes</option>
+                <option name="recipes" value="Desserts">Desserts</option>
+            </select>
+
+        <p>3.How many times a week do you cook it?</p>
+            <input id="q3" type="number" value= "" name="n_recipes" min="1" max="10000" >
+
+        <p>4.Would you like there to be more recipes for:</p>
+            <form>
+                <input id="q4" type="checkbox" name="mrecipes" value="Vegans">Vegans<br>
+                <input id="q5" type="checkbox" name="mrecipes" value="Celiacs">Celiacs<br>
+                <input id="q6" type="checkbox" name="mrecipes" value="Diabetics">Diabetics<br>
+                <input id="q7" type="checkbox" name="mrecipes" value="Low cholesterol">Low cholesterol<br>
+            </form>
+
+        <p>5.Would you recommend our site?</p>
+            <form>
+                <input id="q8" type="radio" name="recommendation" value="Yes"> Yes<br>
+                <input id="q9" type="radio" name="recommendation" value="NO"> No<br>
+        </form>
+                
+                <!--Not robot-->
+        
+                <p>I´m not a robot</p> 
+            <form name="ran">
+		          <input name="numran" id="numran" readonly="readonly" size="2">
+                <br>
+                <br>
+                  <input name="akshum" id="askhum" size="2">
+		      </form>
+        <br>
+        <button onclick="send()">Send</button>
+        <p id="ask6"> </p>
+        <p id="ask123"> </p>
+        <p id="ask4"> </p>
+        <p id="ask5"> </p>
+        
+        
+            <script> 
+                //not robot
+                document.ran.numran.value = Math.round(Math.random()*999);
+
+                function  send(){   
+                    
+                    //ask123
+                    
+                    var q1 = document.getElementById("q1").value;
+                    var q2 = document.getElementById("q2").value;
+                    var q3 = document.getElementById("q3").value;                
+                
+                    if (q1 == "empty") {
+                        window.alert ('Please answer question 1 !');
+                    }
+                    if (q2 == "empty" ) {
+                        window.alert ('Please answer question 2 !');
+                    }
+                    if (q3 < 1 ) {
+                        window.alert ('Please answer question 3 !');
+                    }
+                    else if (q1 == "empty" || q2 == "empty"){
+                    document.getElementById("ask123").innerHTML= " ";
+                    }
+                    else{ 
+                        document.getElementById("ask123").innerHTML= "Your favourite section is "+q1+". Your favourite recipe is "+q2+" and you cook it "+q3+" times a week.";
+                        }
+              
+                    //ask4
+                    
+                    var q4 =" ";
+                    var q5 =" ";
+                    var q6 =" ";
+                    var q7 =" ";
+                    
+                    if (document.getElementById('q4').checked){q4 = "Vegans,";}
+                    if (document.getElementById('q5').checked){q5 = "Celiac,";}
+                    if (document.getElementById('q6').checked){q6 = "Diabetics,";}
+                    if (document.getElementById('q7').checked){q7 = "Low Cholesterol,";}
+                    document.getElementById("ask4").innerHTML= "Would you like to see more recipes from "+q4+" "+q5+" "+q6+" "+q7+" ";
+                    if (q4 == " " && q5 == " " && q6 == " " && q7 == " "){document.getElementById("ask4").innerHTML=" ";}
+                    if (q1 == "empty" || q2 == "empty" || q3 == ""){document.getElementById("ask4").innerHTML= " ";}
+                    
+                    //ask5
+                    var check="0"
+                    if (document.getElementById('q8').checked) {
+                		document.getElementById("ask5").innerHTML= "Thanks for recommending us";check="1";
+            		}
+                                     
+            		if (document.getElementById('q9').checked) {
+                		document.getElementById("ask5").innerHTML= "Thank you, with your opinion you help us to improve";check="1";
+                    }
+                    
+                    if (check == "0"){alert("Please select yes or no"); document.getElementById("ask5").innerHTML= " ";
+                                     }
+                    
+                    //not robot
+                   	var nr = document.getElementById("numran").value;
+                    var ah = document.getElementById("askhum").value;
+                    
+                   if (nr == ah && check == "1") {document.getElementById("ask6").innerHTML= "Survey sent";
+                                                 }
+                   else {document.getElementById("ask6").innerHTML= "Wrong number"; document.ran.numran.value = Math.round(Math.random()*999); document.getElementById("ask123").innerHTML= " "; document.getElementById("ask4").innerHTML= " "; document.getElementById("ask5").innerHTML= " "; document.getElementById("askhum").value = " ";
+                        }
+                }
+                   
+            </script>
+    </section>
+
+</main>
+    <br>
+    <br>
+    <!--footer-->
+<footer>
+    <br>
+    <div class="footer_top">
+        <p class="col-2 col-s-12 div"><a href="#legal">LEGAL WARNING</a></p>
+        <p class="col-2 col-s-12 div"><a href="#privacy">PRIVACY POLICY</a></p>
+        <p class="col-2 col-s-12"><a href="#cookies">COOKIES POLICY</a></p>
+        <p class="col-2 col-s-12"><a href="#suscribe">SUSCRIBE</a></p>
+    </div>
+    <div class="footer_bottom">
+        <p class="col-2 col-s-12"><a href="#email">David Hernandez Poveda 2023</a></p>
+        <p class="col-2 col-s-12"><a href="http://jigsaw.w3.org/css-validator/check/referer">
+        <img style="border:0;width:88px;height:31px"
+            src="http://jigsaw.w3.org/css-validator/images/vcss"
+            alt="¡CSS Válido!" ></a>
+        </p>
+        <a href="#home"> <img src="images/index/up.png" alt="up" class="up"></a>
+    </div>
+    <br>
+</footer>
+</body>
+</html>

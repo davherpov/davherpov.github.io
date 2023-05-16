@@ -1,0 +1,188 @@
+*{box-sizing: border-box;
+}
+
+/*h1*/
+h1{font-family: "Lucida Handwriting";
+    text-align: center;
+    color: #2B3A67;
+    font-size: 50px;
+    padding: 2%;  
+}
+
+/*header*/
+header, footer{background-color: #E05263;}
+
+/*background body*/
+body{
+    background-image: url(../images/index/main.jpg); 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    
+}
+
+/*flex nav*/
+nav ul{
+    display:flex;
+    flex-direction: row;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/*box nav*/
+.menu_box>li{
+    padding: 1%;
+    border: 0px ;    
+}
+
+/*size icon*/
+.size_icon{
+    font-size: 25px;
+}
+
+/*style nav*/
+.menu_drop>li>a{
+    background-color: #2B3A67;
+    color: white;
+    padding: 10px;
+    display: block;
+    text-decoration: none;
+    min-width: 50px;
+    text-align:center;
+    box-shadow: 5px 5px 15px #0009;
+}
+
+/*size menu2*/
+.menu_2>li{
+    min-width: 110px;
+}
+
+/*Nested list*/
+.menu_drop>li>ul>li>a{
+    background-color: #2B3A67;
+    color: white;
+    padding: 10px;
+    display: block;
+    text-decoration: none;
+    min-width: 100px;
+    text-align:center;
+}
+
+/*List and nested list*/
+.menu_drop li>a:hover{
+    color: black;
+    background-color: #C3C3E6;
+}
+
+/*By default the nested list is hidden*/
+.menu_drop>li>ul{
+    display: none;
+    position: absolute; /*the dropdown is over the content*/
+}
+
+/*When you (hovering) roll the cursor over the item, the drop-down-menu appears*/
+.menu_drop>li:hover>ul{
+    display:flex;
+    flex-direction:column;
+}
+.menu_pc {
+    display: none;
+}
+
+/*main*/
+.section{
+    display:flex;
+     flex-direction: row;
+    flex-wrap:wrap;
+    justify-content: space-around;
+}
+
+/*footer a*/
+footer>div>p>a{
+    color: white;
+    text-decoration: none;
+}
+
+footer>div>p:hover>a{
+    color: black;
+    background-color: #C3C3E6; 
+}
+
+footer>div>p:hover{
+    background-color: #C3C3E6; 
+}
+/*footer*/
+footer>div>p{
+    width: 20%;    
+    background-color: #2B3A67;
+    text-align: center;
+    padding: 1px;
+    margin: 3px;
+    box-shadow: 5px 5px 15px #0009;
+}
+
+/*Footer top*/
+.footer_top{
+    display:flex;
+     flex-direction: row;
+    flex-wrap:wrap;
+    justify-content: space-around;
+}
+
+/*Footer bottom*/
+.footer_bottom{
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    flex-wrap:wrap;
+}
+
+.up{
+    width: 35px;
+    height: 35px;
+}
+
+/*For mobile phones:*/
+[class*="col-"] {
+    width: 100%;
+}
+@media only screen and (min-width: 400px) {
+
+    /* For tablets: */
+.col-s-1 {width: 8.33%;}
+.col-s-2 {width: 16.66%;}
+.col-s-3 {width: 25%;}
+.col-s-4 {width: 33.33%;}
+.col-s-5 {width: 41.66%;}
+.col-s-6 {width: 50%;}
+.col-s-7 {width: 58.33%;}
+.col-s-8 {width: 66.66%;}
+.col-s-9 {width: 75%;}
+.col-s-10 {width: 83.33%;}
+.col-s-11 {width: 91.66%;}
+.col-s-12 {width: 100%;}
+.menu_movil {
+    display: none;
+}
+.menu_pc {
+    display: flex;
+}
+}
+@media only screen and (min-width: 768px) {
+
+    /* For desktop: */
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+}
