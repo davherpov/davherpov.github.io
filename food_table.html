@@ -54,7 +54,48 @@
     
     <section class="section">
         <div class="col-6 col-s-12">
-            <h2>CODIGO y JAVA</h2>         
+            <h2>Fruits</h2>
+            <script>
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() { 
+      if (this.readyState == 4 && this.status == 200) { 
+        myFunction(this); 
+      } 
+    };
+
+    // Abrimos el archivo que está alojado en el servidor food_fruits.xml
+    xmlhttp.open("GET", "food_fruits.xml", true); 
+    xmlhttp.send();
+
+    function myFunction(xml) { 
+      var x, i, xmlDoc, table; 
+      
+      // Obtenemos un objeto XMLDocument con el contenido del archivo XML del servidor
+      xmlDoc = xml.responseXML;
+      table = "<tr><th>Spring</th><th>Summer</th><th>Autumn</th><th>Winter</th></tr>";
+
+      // Obtenemos todos los nodos denominados "fruit" del archivo XML
+      x = xmlDoc.getElementsByTagName("fruit");
+
+      // Hacemos un bucle recorriendo todos los elementos "fruit"
+      for (i = 0; i < x.length; i++) {
+        // Del elemento "x", obtenemos los elementos "name" y "season"
+        var name = x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue;
+        var season = x[i].getElementsByTagName("season")[0].childNodes[0].nodeValue;
+
+        // Agregamos los valores a la tabla
+        table += "<tr>";
+        table += "<td>" + (season === "Spring" ? name : "") + "</td>";
+        table += "<td>" + (season === "Summer" ? name : "") + "</td>";
+        table += "<td>" + (season === "Autumn" ? name : "") + "</td>";
+        table += "<td>" + (season === "Winter" ? name : "") + "</td>";
+        table += "</tr>";
+      }
+
+      document.getElementById("fruits").innerHTML = table; 
+    } 
+  </script>
+            
         </div>
         <div class="col-6 col-s-12">
             <h2>CODIGO JAVA</h2>   
