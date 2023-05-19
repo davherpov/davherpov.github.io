@@ -76,21 +76,34 @@
       xmlDoc = xml.responseXML;
       table = "<tr><th>Spring</th><th>Summer</th><th>Autumn</th><th>Winter</th></tr>";
 
+      // Creamos un objeto para almacenar las frutas por estación
+      var fruitsBySeason = {
+        "Spring": [],
+        "Summer": [],
+        "Autumn": [],
+        "Winter": []
+      };
+
       // Obtenemos todos los nodos denominados "fruit" del archivo XML
       x = xmlDoc.getElementsByTagName("fruit");
 
-      // Hacemos un bucle recorriendo todos los elementos "fruit"
+      // Recorremos los elementos "fruit" y almacenamos las frutas en el objeto por estación
       for (i = 0; i < x.length; i++) {
-        // Del elemento "x", obtenemos los elementos "name" y "season"
-        var name = x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue;
-        var season = x[i].getElementsByTagName("season")[0].childNodes[0].nodeValue;
+        var name = x[i].getElementsByTagName("name")[0].textContent;
+        var season = x[i].getElementsByTagName("season")[0].textContent;
+        fruitsBySeason[season].push(name);
+      }
 
-        // Agregamos los valores a la tabla
+      // Obtenemos la cantidad máxima de frutas en una estación
+      var maxFruitsCount = Math.max(...Object.values(fruitsBySeason).map(fruits => fruits.length));
+
+      // Construimos la tabla con las frutas
+      for (i = 0; i < maxFruitsCount; i++) {
         table += "<tr>";
-        table += "<td>" + (season === "Spring" ? name : "") + "</td>";
-        table += "<td>" + (season === "Summer" ? name : "") + "</td>";
-        table += "<td>" + (season === "Autumn" ? name : "") + "</td>";
-        table += "<td>" + (season === "Winter" ? name : "") + "</td>";
+        table += "<td>" + (fruitsBySeason["Spring"][i] || "") + "</td>";
+        table += "<td>" + (fruitsBySeason["Summer"][i] || "") + "</td>";
+        table += "<td>" + (fruitsBySeason["Autumn"][i] || "") + "</td>";
+        table += "<td>" + (fruitsBySeason["Winter"][i] || "") + "</td>";
         table += "</tr>";
       }
 
