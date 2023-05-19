@@ -61,7 +61,7 @@
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() { 
       if (this.readyState == 4 && this.status == 200) { 
-        myFunction(this); 
+        fruitFunction(this); 
       } 
     };
 
@@ -69,7 +69,7 @@
     xmlhttp.open("GET", "food_fruits.xml", true); 
     xmlhttp.send();
 
-    function myFunction(xml) { 
+    function fruitFunction(xml) { 
       var x, i, xmlDoc, table; 
       
       // Obtenemos un objeto XMLDocument con el contenido del archivo XML del servidor
@@ -120,7 +120,7 @@
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() { 
       if (this.readyState == 4 && this.status == 200) { 
-        myFunction(this); 
+        vegetableFunction(this); 
       } 
     };
 
@@ -128,7 +128,7 @@
     xmlhttp.open("GET", "vegetables.xml", true); 
     xmlhttp.send();
 
-    function myFunction(xml) { 
+    function vegetableFunction(xml) { 
       var x, i, xmlDoc, table; 
       
       // Obtenemos un objeto XMLDocument con el contenido del archivo XML del servidor
