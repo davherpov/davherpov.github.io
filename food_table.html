@@ -115,40 +115,61 @@
         <div class="col-6 col-s-12">
                          <h2>Vegtables</h2> 
             
-            <table id="vegetable" border="1"> </table>
-            
-           <script>
-               var xmlhttp = new XMLHttpRequest();
-               xmlhttp.onreadystatechange = function() { 
-                   if (this.readyState == 4 && this.status == 200) { 
-                       myFunction(this); 
-                   } 
-               };
+            <table id="vegetables" border="1"> </table>
+            <script>
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() { 
+      if (this.readyState == 4 && this.status == 200) { 
+        myFunction(this); 
+      } 
+    };
 
-// Abrimos el archivo que est? alojado en el servidor food_vegetables.xml 
-               xmlhttp.open("GET", "food_vegetables.xml" , true); 
-               xmlhttp.send();
-               
-            function myFunction(xml) { 
-                var x, i, xmlDoc, table; 
-                          
-// Obtenemos un objeto XMLDocument con el contenido del archivo xml del servidor 
-                xmlDoc = xml.responseXML;
-                table = "<tr><th>season</th></tr>";
+    // Abrimos el archivo que está alojado en el servidor food_fruits.xml
+    xmlhttp.open("GET", "vegetables.xml", true); 
+    xmlhttp.send();
 
-// Obtenemos todos los nodos denominados vegetable del archivo xml 
-               x = xmlDoc.getElementsByTagName("vegetable");
-                
-// Hacemos un bucle recorriendo todos los elementos vegetable 
-                for (i = 0; i < x.length; i++) {
-                    
-// Del elemento X, obtenemos del primer elemento denominado "name" 
-                    table += "<tr>
-                    <td>" + x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue + "</td>
-                    </tr>"; 
-                } document.getElementById("vegetable").innerHTML = table; 
-            } 
-            </script>  
+    function myFunction(xml) { 
+      var x, i, xmlDoc, table; 
+      
+      // Obtenemos un objeto XMLDocument con el contenido del archivo XML del servidor
+      xmlDoc = xml.responseXML;
+      table = "<tr><th>Spring</th><th>Summer</th><th>Autumn</th><th>Winter</th></tr>";
+
+      // Creamos un objeto para almacenar las frutas por estación
+      var fruitsBySeason = {
+        "Spring": [],
+        "Summer": [],
+        "Autumn": [],
+        "Winter": []
+      };
+
+      // Obtenemos todos los nodos denominados "fruit" del archivo XML
+      x = xmlDoc.getElementsByTagName("vegetable");
+
+      // Recorremos los elementos "fruit" y almacenamos las frutas en el objeto por estación
+      for (i = 0; i < x.length; i++) {
+        var name = x[i].getElementsByTagName("name")[0].textContent;
+        var season = x[i].getElementsByTagName("season")[0].textContent;
+        vegetablesBySeason[season].push(name);
+      }
+
+      // Obtenemos la cantidad máxima de frutas en una estación
+      var maxVegetablesCount = Math.max(...Object.values(vegetablesBySeason).map(vegetables => vegetables.length));
+
+      // Construimos la tabla con las frutas
+      for (i = 0; i < maxVegetablesCount; i++) {
+        table += "<tr>";
+        table += "<td>" + (vegetablesBySeason["Spring"][i] || "") + "</td>";
+        table += "<td>" + (vegetablessBySeason["Summer"][i] || "") + "</td>";
+        table += "<td>" + (vegetablesBySeason["Autumn"][i] || "") + "</td>";
+        table += "<td>" + (vegetablesBySeason["Winter"][i] || "") + "</td>";
+        table += "</tr>";
+      }
+
+      document.getElementById("vegetables").innerHTML = table; 
+    } 
+  </script>
+             
         </div>
     </section>    
     
