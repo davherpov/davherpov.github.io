@@ -27,7 +27,7 @@
             <li><a href="#register">Register</a>
                 <ul class="menu_drop menu_2">
                     <li> <a href="register.html">Register</a> </li>
-                    <li> <a href="#">Contac</a> </li>
+                    <li> <a href="questionnaire.html">Questionnaire</a> </li>
                 </ul>
             </li>    
         </ul>
@@ -43,13 +43,14 @@
     <li class="col-3 col-s-3"><a href="#register">Register</a>  
         <ul>
             <li> <a href="register.html">Register</a> </li>
-            <li> <a href="#">Contact</a> </li>
+            <li> <a href="questionnaire.html">Questionnaire</a> </li>
         </ul>
     </li>
 </ul>
 </nav>
     <!--section-->
 <main>
+    <br>
             <!--Register-->
         <h2>Register to receive our recipes</h2>
     
@@ -84,134 +85,7 @@
 }
             </script>
     </section>
-    
-    <br>
-            <!--Questionnaire-->
-        <h2>Help us to improve</h2>
-    
-    <section>
-        <p>1.Which section do you like best?</p>
-            <select id="q1">
-                <option name="section" value="empty"></option>
-                <option name="section" value="Today's menu">Today's menu</option>
-                <option name="section" value="Recipes">Recipes</option>
-                <option name="section" value="Gallery">Gallery</option>
-            </select>
-
-        <p>2.What do you prefer the recipes of?</p>
-            <select id="q2">
-                <option name="recipes" value="empty"></option>
-                <option name="recipes" value="Meat">Meat</option>
-                <option name="recipes" value="Fish">Fish</option>
-                <option name="recipes" value="Vegetables">Vegetables</option>
-                <option name="recipes" value="Legumes">Legumes</option>
-                <option name="recipes" value="Desserts">Desserts</option>
-            </select>
-
-        <p>3.How many times a week do you cook it?</p>
-            <input id="q3" type="number" value= "" name="n_recipes" min="1" max="10000" >
-
-        <p>4.Would you like there to be more recipes for:</p>
-            <form>
-                <input id="q4" type="checkbox" name="mrecipes" value="Vegans">Vegans<br>
-                <input id="q5" type="checkbox" name="mrecipes" value="Celiacs">Celiacs<br>
-                <input id="q6" type="checkbox" name="mrecipes" value="Diabetics">Diabetics<br>
-                <input id="q7" type="checkbox" name="mrecipes" value="Low cholesterol">Low cholesterol<br>
-            </form>
-
-        <p>5.Would you recommend our site?</p>
-            <form>
-                <input id="q8" type="radio" name="recommendation" value="Yes"> Yes<br>
-                <input id="q9" type="radio" name="recommendation" value="NO"> No<br>
-        </form>
-                
-                <!--Not robot-->
-        
-                <p>I´m not a robot</p> 
-            <form name="ran">
-		          <input name="numran" id="numran" readonly="readonly" size="2">
-                <br>
-                <br>
-                  <input name="akshum" id="askhum" size="2">
-		      </form>
-        <br>
-        <button onclick="send()">Send</button>
-        <p id="ask6"> </p>
-        <p id="ask123"> </p>
-        <p id="ask4"> </p>
-        <p id="ask5"> </p>
-        
-        
-            <script> 
-                //not robot
-                document.ran.numran.value = Math.round(Math.random()*999);
-
-                function  send(){   
-                    
-                    //ask123
-                    
-                    var q1 = document.getElementById("q1").value;
-                    var q2 = document.getElementById("q2").value;
-                    var q3 = document.getElementById("q3").value;                
-                
-                    if (q1 == "empty") {
-                        window.alert ('Please answer question 1 !');
-                    }
-                    if (q2 == "empty" ) {
-                        window.alert ('Please answer question 2 !');
-                    }
-                    if (q3 < 1 ) {
-                        window.alert ('Please answer question 3 !');
-                    }
-                    else if (q1 == "empty" || q2 == "empty"){
-                    document.getElementById("ask123").innerHTML= " ";
-                    }
-                    else{ 
-                        document.getElementById("ask123").innerHTML= "Your favourite section is "+q1+". Your favourite recipe is "+q2+" and you cook it "+q3+" times a week.";
-                        }
-              
-                    //ask4
-                    
-                    var q4 =" ";
-                    var q5 =" ";
-                    var q6 =" ";
-                    var q7 =" ";
-                    
-                    if (document.getElementById('q4').checked){q4 = "Vegans,";}
-                    if (document.getElementById('q5').checked){q5 = "Celiac,";}
-                    if (document.getElementById('q6').checked){q6 = "Diabetics,";}
-                    if (document.getElementById('q7').checked){q7 = "Low Cholesterol,";}
-                    document.getElementById("ask4").innerHTML= "Would you like to see more recipes from "+q4+" "+q5+" "+q6+" "+q7+" ";
-                    if (q4 == " " && q5 == " " && q6 == " " && q7 == " "){document.getElementById("ask4").innerHTML=" ";}
-                    if (q1 == "empty" || q2 == "empty" || q3 == ""){document.getElementById("ask4").innerHTML= " ";}
-                    
-                    //ask5
-                    var check="0"
-                    if (document.getElementById('q8').checked) {
-                		document.getElementById("ask5").innerHTML= "Thanks for recommending us";check="1";
-            		}
-                                     
-            		if (document.getElementById('q9').checked) {
-                		document.getElementById("ask5").innerHTML= "Thank you, with your opinion you help us to improve";check="1";
-                    }
-                    
-                    if (check == "0"){alert("Please select yes or no"); document.getElementById("ask5").innerHTML= " ";
-                                     }
-                    
-                    //not robot
-                   	var nr = document.getElementById("numran").value;
-                    var ah = document.getElementById("askhum").value;
-                    
-                   if (nr == ah && check == "1") {document.getElementById("ask6").innerHTML= "Survey sent";
-                                                 }
-                   else {document.getElementById("ask6").innerHTML= "Wrong number"; document.ran.numran.value = Math.round(Math.random()*999); document.getElementById("ask123").innerHTML= " "; document.getElementById("ask4").innerHTML= " "; document.getElementById("ask5").innerHTML= " "; document.getElementById("askhum").value = " ";
-                        }
-                }
-                   
-            </script>
-    </section>
-
-</main>
+    </main>    
     <br>
     <br>
     <!--footer-->
