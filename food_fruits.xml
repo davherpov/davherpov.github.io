@@ -1,108 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE fruits [ 
-    <!ELEMENT fruits (fruit+)>
-    <!ELEMENT fruit (name+, season+)>
-    <!ELEMENT name (#PCDATA)>
-    <!ELEMENT season (#PCDATA)>
+<!DOCTYPE seasons [ 
+    <!ELEMENT seasons (season+)>
+    <!ELEMENT season (spring+, summer+, autumn+, winter+)>
+    <!ELEMENT spring (#PCDATA)>
+     <!ELEMENT summer (#PCDATA)>
+    <!ELEMENT autumn (#PCDATA)>
+    <!ELEMENT winter (#PCDATA)>
 ]>
-<!--fruits-->
-<fruits>
-    <fruit>
-        <name>Apricot</name>
-        <season>Spring</season>
-    </fruit>
-    <fruit>
-        <name>Cherry</name>
-        <season>Spring</season>
-    </fruit>
-    <fruit>
-        <name>Plum</name>
-        <season>Spring</season>
-    </fruit>
-    <fruit>
-        <name>Strawberry</name>
-        <season>Spring</season>
-    </fruit>
-    <fruit>
-        <name>Peach</name>
-        <season>Spring</season>
-    </fruit>
-    <fruit>
-        <name>Melon</name>
-        <season>Spring</season>
-    </fruit>
-    <fruit>
-        <name>Peach</name>
-        <season>Summer</season>
-    </fruit>
-    <fruit>
-        <name>Raspberry</name>
-        <season>Summer</season>
-    </fruit>
-    <fruit>
-        <name>Mango</name>
-        <season>Summer</season>
-    </fruit>
-    <fruit>
-        <name>Nectarine</name>
-        <season>Summer</season>
-    </fruit>
-    <fruit>
-        <name>Watermelon</name>
-        <season>Summer</season>
-    </fruit>
-    <fruit>
-        <name>Cherry</name>
-        <season>Summer</season>
-    </fruit>
-    <fruit>
-        <name>Grape</name>
-        <season>Autumn</season>
-    </fruit>
-    <fruit>
-        <name>Persimmon</name>
-        <season>Autumn</season>
-    </fruit>
-    <fruit>
-        <name>Tangerine</name>
-        <season>Autumn</season>
-    </fruit>
-        <fruit>
-        <name>Apple</name>
-        <season>Autumn</season>
-    </fruit>
-    <fruit>
-        <name>Pear</name>
-        <season>Autumn</season>
-    </fruit>
-    <fruit>
-        <name>Pomegranate</name>
-        <season>Autumn</season>
-    </fruit>
-        <fruit>
-        <name>Kiwi</name>
-        <season>Winter</season>
-    </fruit>
-    <fruit>
-        <name>Lemon</name>
-        <season>Winter</season>
-    </fruit>
-    <fruit>
-        <name>Orange</name>
-        <season>Winter</season>
-    </fruit>
-        <fruit>
-        <name>Tangerine</name>
-        <season>Winter</season>
-    </fruit>
-    <fruit>
-        <name>Persimmon</name>
-        <season>Winter</season>
-    </fruit>
-    <fruit>
-        <name>Apple</name>
-        <season>Winter</season>
-    </fruit>
-</fruits>
-
-
+<seasons>
+    <season>
+        <spring>Apricot</spring>
+        <summer>Peach</summer>
+        <autumn>Grape</autumn>
+        <winter>Kiwi</winter>
+    </season>
+        <season>
+        <spring>Cherry</spring>
+        <summer>Raspberry</summer>
+        <autumn>Persimmon</autumn>
+        <winter>Lemon</winter>
+    </season>
+        <season>
+        <spring>Strawberry</spring>
+        <summer>Mango</summer>
+        <autumn>Pear</autumn>
+        <winter>Orange</winter>
+    </season>
+        <season>
+        <spring>Peach</spring>
+        <summer>Nectarine</summer>
+        <autumn>Tangerine</autumn>
+        <winter>Tangerine</winter>
+    </season>
+        <season>
+        <spring>Melon</spring>
+        <summer>Watermelon</summer>
+        <autumn>Apple</autumn>
+        <winter>Persimmon</winter>
+    </season>
+        <season>
+        <spring>Plum</spring>
+        <summer>Cherry</summer>
+        <autumn>Pear</autumn>
+        <winter>Apple</winter>
+    </season>
+</seasons>

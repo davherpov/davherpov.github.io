@@ -1,107 +1,47 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE vegetables [ 
-    <!ELEMENT vegetables (vegetable+)>
-    <!ELEMENT vegetable (name+, season+)>
-    <!ELEMENT name (#PCDATA)>
-    <!ELEMENT season (#PCDATA)>
+<!DOCTYPE seasons [ 
+    <!ELEMENT seasons (season+)>
+    <!ELEMENT season (spring+, summer+, autumn+, winter+)>
+    <!ELEMENT spring (#PCDATA)>
+     <!ELEMENT summer (#PCDATA)>
+    <!ELEMENT autumn (#PCDATA)>
+    <!ELEMENT winter (#PCDATA)>
 ]>
-<!--vegetable-->
-
-<vegetables>
-    <vegetable>
-        <name>Tomato</name>
-        <season>Spring</season>
-    </vegetable>
-    <vegetable>
-        <name>Radish,</name>
-        <season>Spring</season>
-    </vegetable>
-    <vegetable>
-        <name>Green bean</name>
-        <season>Spring</season>
-    </vegetable>
-        <vegetable>
-        <name>Lettuce</name>
-        <season>Spring</season>
-    </vegetable>
-    <vegetable>
-        <name>Onions</name>
-        <season>Spring</season>
-    </vegetable>
-    <vegetable>
-        <name>Pumpkin</name>
-        <season>Spring</season>
-    </vegetable>
-        <vegetable>
-        <name>Zucchini</name>
-        <season>Summer</season>
-    </vegetable>
-    <vegetable>
-        <name>Pumpkin</name>
-        <season>Summer</season>
-    </vegetable>
-    <vegetable>
-        <name>Garlic</name>
-        <season>Summer</season>
-    </vegetable>
-        <vegetable>
-        <name>Lettuce</name>
-        <season>Summer</season>
-    </vegetable>
-    <vegetable>
-        <name>Cucumber</name>
-        <season>Summer</season>
-    </vegetable>
-    <vegetable>
-        <name>Carrot</name>
-        <season>Summer</season>
-    </vegetable>
-        <vegetable>
-        <name>Lettuce</name>
-        <season>Autumn</season>
-    </vegetable>
-    <vegetable>
-        <name>Pumpkin</name>
-        <season>Autumn</season>
-    </vegetable>
-    <vegetable>
-        <name>Spinach</name>
-        <season>Autumn</season>
-    </vegetable>
-        <vegetable>
-        <name>Chard</name>
-        <season>Autumn</season>
-    </vegetable>
-    <vegetable>
-        <name>Leek</name>
-        <season>Autumn</season>
-    </vegetable>
-    <vegetable>
-        <name>Cabbage</name>
-        <season>Autumn</season>
-    </vegetable>
-        <vegetable>
-        <name>zucchini</name>
-        <season>Winter</season>
-    </vegetable>
-    <vegetable>
-        <name>Cabbage</name>
-        <season>Winter</season>
-    </vegetable>
-    <vegetable>
-        <name>cauliflower</name>
-        <season>Winter</season>
-    </vegetable>
-        <vegetable>
-        <name>endive</name>
-        <season>Winter</season>
-    </vegetable>
-    <vegetable>
-        <name>escarole</name>
-        <season>Winter</season>
-    </vegetable>
-    <vegetable>
-        <name>aubergines</name>
-        <season>Winter</season>
-    </vegetable>
-</vegetables>
+<seasons>
+    <season>
+        <spring>Tomato</spring>
+        <summer>Zucchini</summer>
+        <autumn>Lettuce</autumn>
+        <winter>zucchini</winter>
+    </season>
+        <season>
+        <spring>Radish</spring>
+        <summer>Pumpkin</summer>
+        <autumn>Pumpkin</autumn>
+        <winter>Cabbage</winter>
+    </season>
+        <season>
+        <spring>Green bean</spring>
+        <summer>Garlic</summer>
+        <autumn>Spinach</autumn>
+        <winter>cauliflower</winter>
+    </season>
+        <season>
+        <spring>Lettuce</spring>
+        <summer>Lettuce</summer>
+        <autumn>Chard</autumn>
+        <winter>endive</winter>
+    </season>
+        <season>
+        <spring>Onions</spring>
+        <summer>Cucumber</summer>
+        <autumn>Leek</autumn>
+        <winter>escarole</winter>
+    </season>
+        <season>
+        <spring>Pumpkin</spring>
+        <summer>Carrot</summer>
+        <autumn>Cabbage</autumn>
+        <winter>aubergines</winter>
+    </season>
+</seasons>
