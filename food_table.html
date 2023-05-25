@@ -90,40 +90,7 @@ function myFunction(xml) {
             
         </div>
 
-        <div>
-                         <h2>Vegtables</h2> 
-                        <table id="vegetables" border="1"> </table>
-<script>
-  var xmlhttp = new XMLHttpRequest();
-  xmlhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      myFunction(this);
-    }
-  };
-  xmlhttp.open("GET", "food_vegetables.xml" , true); xmlhttp.send();
 
-
-function myFunction(xml) {
-  var x, i, xmlDoc, table;
-  xmlDoc = xml.responseXML;
-  table = "<tr><th>Spring</th><th>Summer</th><th>Autumn</th><th>Winter</th></tr>";
-  x = xmlDoc.getElementsByTagName("season")
-  for (i = 0; i < x.length; i++) { 
-    table += "<tr><td>" + 
-    x[i].getElementsByTagName("spring")[0].childNodes[0].nodeValue +
-    "</td><td>" +
-    x[i].getElementsByTagName("summer")[0].childNodes[0].nodeValue +
-    "</td><td>" +
-    x[i].getElementsByTagName("autumn")[0].childNodes[0].nodeValue +
-    "</td><td>" +
-    x[i].getElementsByTagName("winter")[0].childNodes[0].nodeValue +
-    "</td></tr>"
-    ;
-  }
-  document.getElementById("vegetables").innerHTML = table;
-}
-</script>             
-        </div>
       
     
 
