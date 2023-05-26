@@ -53,10 +53,10 @@
         <h2> Seasonal foods</h2>
     
     <section class="section">
-           
+           <div>
             
-            <h2>Fruits</h2>
-                        <table id="frut" border="1"> </table>
+            <h2>Fruits & Vegetables</h2>
+                        <table id="food" border="1"> </table>
 <script>
   var xmlhttp = new XMLHttpRequest();
   xmlhttp.onreadystatechange = function() {
@@ -64,7 +64,7 @@
       myFunction(this);
     }
   };
-  xmlhttp.open("GET", "food_fruits.xml" , true); xmlhttp.send();
+  xmlhttp.open("GET", "food.xml" , true); xmlhttp.send();
 
 
 function myFunction(xml) {
@@ -84,50 +84,14 @@ function myFunction(xml) {
     "</td></tr>"
     ;
   }
-  document.getElementById("frut").innerHTML = table;
+  document.getElementById("food").innerHTML = table;
 }
 </script>           
             
-       
+        </div>
     </section>
     <br>
-    <br>
-    <section class="section">
-       
-            <h2>Vegetables</h2>
-             <table id="veget" border="1"> </table>
-<script>
-  var xmlhttp = new XMLHttpRequest();
-  xmlhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      myFunction(this);
-    }
-  };
-  xmlhttp.open("GET", "food_vegetables.xml" , true); xmlhttp.send();
 
-
-function myFunction(xml) {
-  var x, i, xmlDoc, table;
-  xmlDoc = xml.responseXML;
-  table = "<tr><th>Spring</th><th>Summer</th><th>Autumn</th><th>Winter</th></tr>";
-  x = xmlDoc.getElementsByTagName("season")
-  for (i = 0; i < x.length; i++) { 
-    table += "<tr><td>" + 
-    x[i].getElementsByTagName("spring")[0].childNodes[0].nodeValue +
-    "</td><td>" +
-    x[i].getElementsByTagName("summer")[0].childNodes[0].nodeValue +
-    "</td><td>" +
-    x[i].getElementsByTagName("autumn")[0].childNodes[0].nodeValue +
-    "</td><td>" +
-    x[i].getElementsByTagName("winter")[0].childNodes[0].nodeValue +
-    "</td></tr>"
-    ;
-  }
-  document.getElementById("veget").innerHTML = table;
-}
-</script>
-        
-    </section>
       
     
 
